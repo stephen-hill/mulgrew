@@ -1,6 +1,6 @@
 <?php
 
-namespace Wiki;
+namespace Wiki\Model;
 
 class Page
 {
@@ -18,7 +18,7 @@ class Page
 
     /**
      * The revision that represents the current state of the page
-     * @var Wiki\Revision
+     * @var Wiki\Model\Revision
      */
     protected $latestRevision;
 }

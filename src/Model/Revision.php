@@ -1,6 +1,6 @@
 <?php
 
-namespace Wiki;
+namespace Wiki\Model;
 
 use DateTime;
 
@@ -14,13 +14,13 @@ class Revision
 
     /**
      * The page
-     * @var Wiki\Page
+     * @var Wiki\Model\Page
      */
     protected $page;
 
     /**
      * The user who created the revision
-     * @var Wiki\User
+     * @var Wiki\Model\User
      */
     protected $user;
 
