@@ -45,4 +45,38 @@ class User
     {
         return hash_pbkdf2('sha256', $password, $this->email, 256E3, 0, true);
     }
+
+    /**
+     * Gets the User Identifier.
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Gets the User's email address.
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Sets the User's email address.
+     *
+     * @param string $email the email
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
 }
