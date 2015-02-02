@@ -17,5 +17,10 @@
             "email": "stephen@gatekiller.co.uk"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Wiki\\": "src/"
+        }
+    }
 }
