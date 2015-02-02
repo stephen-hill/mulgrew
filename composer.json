@@ -2,7 +2,9 @@
     "name": "stephenhill/wiki",
     "description": "A PHP Wiki",
     "require": {
-        "klein/klein": "~2"
+        "klein/klein": "~2",
+        "cogpowered/finediff": "~0",
+        "ext-hash": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4",
