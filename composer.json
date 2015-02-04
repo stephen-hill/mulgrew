@@ -4,6 +4,7 @@
     "require": {
         "klein/klein": "~2",
         "cogpowered/finediff": "~0",
+        "doctrine/orm": "~2",
         "ext-hash": "*"
     },
     "require-dev": {
