@@ -5,6 +5,7 @@
         "klein/klein": "~2",
         "cogpowered/finediff": "~0",
         "doctrine/orm": "~2",
+        "nesbot/Carbon": "~1",
         "ext-hash": "*"
     },
     "require-dev": {
