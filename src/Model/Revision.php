@@ -2,7 +2,7 @@
 
 namespace Mulgrew\Model;
 
-use DateTime;
+use DateTimeInterface;
 
 class Revision
 {
@@ -40,7 +40,7 @@ class Revision
 
     /**
      * The date and time the revision was created.
-     * @var DateTime
+     * @var DateTimeInterface
      */
     protected $datetime;
 }
