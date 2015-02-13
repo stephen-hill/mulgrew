@@ -1,6 +1,8 @@
 <?php
 
-namespace Wiki\Model;
+namespace Mulgrew\Model;
+
+use Doctrine\Common\Collections\Collection;
 
 class Page
 {
@@ -15,10 +17,17 @@ class Page
      * @var string
      */
     protected $title;
+    
+    /**
+     * The current text of the page
+     * @var string
+     */
+    protected $text;
 
     /**
-     * The revision that represents the current state of the page
-     * @var Wiki\Model\Revision
+     * Collection of all revisions
+     * @var Collection
+     * @OneToMany(targetEntity="Mulgrew\Model\Revision", mappedBy="page")
      */
-    protected $latestRevision;
+    protected $revisions;
 }

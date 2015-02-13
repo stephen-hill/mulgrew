@@ -1,6 +1,6 @@
 <?php
 
-namespace Wiki\Model;
+namespace Mulgrew\Model;
 
 use DateTime;
 
@@ -8,27 +8,29 @@ class Revision
 {
     /**
      * Revision Identifier
+     * @column(type="string", length="40", )
      * @var integer
      */
     protected $id;
 
     /**
      * The page
-     * @var Wiki\Model\Page
+     * @var Mulgrew\Model\Page
+     * @ManyToOne(targetEntity="Mulgrew\Model\Page", inversedBy="revisions")
      */
     protected $page;
 
     /**
      * The user who created the revision
-     * @var Wiki\Model\User
+     * @var Mulgrew\Model\User
      */
     protected $user;
 
     /**
-     * The text contents of this revision
-     * @var string
+     * Opcodes to get to the previous revision
+     * @var string|null
      */
-    protected $text;
+    protected $opcodes;
 
     /**
      * Optional comment for this revision

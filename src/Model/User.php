@@ -1,6 +1,6 @@
 <?php
 
-namespace Wiki\Model;
+namespace Mulgrew\Model;
 
 class User
 {
