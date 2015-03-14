@@ -4,10 +4,10 @@ namespace Mulgrew\Model;
 
 use Doctrine\Common\Collections\Collection;
 
-class Page
+class Note
 {
     /**
-     * Page Identifier
+     * Identifier
      * @var integer
      */
     protected $id;
@@ -27,7 +27,7 @@ class Page
     /**
      * Collection of all revisions
      * @var Collection
-     * @OneToMany(targetEntity="Mulgrew\Model\Revision", mappedBy="page")
+     * @OneToMany(targetEntity="Mulgrew\Model\Revision", mappedBy="note")
      */
     protected $revisions;
 }
