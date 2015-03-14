@@ -1,1 +1,5 @@
+# Directories
 /vendor/
+
+# IDE Files
+*.sublime*
