@@ -6,7 +6,8 @@
         "cogpowered/finediff": "~0",
         "doctrine/orm": "~2",
         "nesbot/Carbon": "~1",
-        "ext-hash": "*"
+        "ext-hash": "*",
+        "doctrine/common": "~2"
     },
     "require-dev": {
         "phpunit/phpunit": "~4",
