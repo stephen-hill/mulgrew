@@ -3,3 +3,6 @@
 
 # IDE Files
 *.sublime*
+
+# Generated Files
+api.html
