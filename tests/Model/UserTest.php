@@ -1,6 +1,6 @@
 <?php
 
-use Wiki\Model\User;
+use Mulgrew\Model\User;
 
 class UserTest extends PHPUnit_Framework_TestCase
 {
@@ -18,7 +18,7 @@ class UserTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame('wiki@example.com', $user->getEmail());
     }
-    
+
     public function testPassword()
     {
         $user = new User();
