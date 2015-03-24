@@ -13,4 +13,12 @@ class RoboFile extends \Robo\Tasks
              $this->taskExec('phpunit')->run();
         })->run();
     }
+
+    function raml()
+    {
+        $this->taskWatch()
+        ->monitor(['api.raml'], function() {
+             $this->taskExec('raml2html -o api.html api.raml')->run();
+        })->run();
+    }
 }
