@@ -5,19 +5,22 @@ namespace Mulgrew\Model;
 class User
 {
     /**
-     * User Identifier
+     * User Identifier.
+     *
      * @var integer
      */
     protected $id;
 
     /**
-     * User's email address
+     * User's email address.
+     *
      * @var string
      */
     protected $email;
 
     /**
-     * User's hashed password
+     * User's hashed password.
+     *
      * @var string
      */
     private $password;
@@ -40,7 +43,7 @@ class User
     {
         return $this->hash($password) === $this->password;
     }
-    
+
     protected function hash($password)
     {
         return hash_pbkdf2('sha256', $password, $this->email, 256E3, 0, true);
