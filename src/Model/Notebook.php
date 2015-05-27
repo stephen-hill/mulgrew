@@ -3,33 +3,45 @@
 namespace Mulgrew\Model;
 
 use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Entity
+ * @Table(name="notebook")
  */
 class Notebook
 {
     /**
      * @Id
+     * @Column(type="integer")
      *
      * @var int
      */
     protected $id;
 
     /**
-     * @Column(type="string", length=256, unique=true)
+     * @Column(type="string", length=128, unique=true)
      *
      * @var string
      */
     protected $title;
 
     /**
+     * @OneToMany(targetEntity="Mulgrew\Model\Note", mappedBy="notebook")
      * @var Collection
      */
     protected $notes;
 
     /**
-     * Gets the value of id.
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->setNotes(new ArrayCollection());
+    }
+
+    /**
+     * Get the identifier of this Notebook.
      *
      * @return int
      */
@@ -79,7 +91,7 @@ class Notebook
      *
      * @return self
      */
-    public function setNotes(Collection $notes)
+    protected function setNotes(Collection $notes)
     {
         $this->notes = $notes;
 
