@@ -4,11 +4,17 @@ namespace Mulgrew\Model;
 
 use Doctrine\Common\Collections\Collection;
 
+/**
+ * @Entity
+ * @Table(name="note")
+ */
 class Note
 {
     /**
      * Identifier.
      *
+     * @Id
+     * @Column(type="integer")
      * @var integer
      */
     protected $id;
@@ -34,6 +40,16 @@ class Note
      * @OneToMany(targetEntity="Mulgrew\Model\Revision", mappedBy="note")
      */
     protected $revisions;
+
+    /**
+     * The Notebook this Note is linked to.
+     *
+     * @ManyToOne(targetEntity="Notebook", inversedBy="notes")
+     * @JoinColumn(name="notebook", referencedColumnName="id")
+     *
+     * @var Notebook
+     */
+    protected $notebook;
 
     /**
      * Gets the Case-sensetive Title.
@@ -81,15 +97,5 @@ class Note
         $this->text = $text;
 
         return $this;
-    }
-
-    /**
-     * Gets the Identifier.
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 }
