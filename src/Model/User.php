@@ -2,11 +2,17 @@
 
 namespace Mulgrew\Model;
 
+/**
+ * @Entity
+ * @Table(name="user")
+ */
 class User
 {
     /**
      * User Identifier.
      *
+     * @Id
+     * @Column(type="integer")
      * @var integer
      */
     protected $id;
@@ -14,6 +20,7 @@ class User
     /**
      * User's email address.
      *
+     * @Column(type="string")
      * @var string
      */
     protected $email;
@@ -21,6 +28,7 @@ class User
     /**
      * User's hashed password.
      *
+     * @Column(type="string")
      * @var string
      */
     private $password;
@@ -47,16 +55,6 @@ class User
     protected function hash($password)
     {
         return hash_pbkdf2('sha256', $password, $this->email, 256E3, 0, true);
-    }
-
-    /**
-     * Gets the User Identifier.
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**
