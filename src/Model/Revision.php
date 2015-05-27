@@ -4,24 +4,21 @@ namespace Mulgrew\Model;
 
 use DateTimeInterface;
 
+/**
+ * @Entity
+ * @Table(name="revision")
+ */
 class Revision
 {
     /**
      * Revision Identifier.
      *
-     * @column(type="string", length="40", )
+     * @Id
+     * @Column(type="integer")
      *
      * @var integer
      */
     protected $id;
-
-    /**
-     * The page.
-     *
-     * @var Mulgrew\Model\Page
-     * @ManyToOne(targetEntity="Mulgrew\Model\Page", inversedBy="revisions")
-     */
-    protected $page;
 
     /**
      * The user who created the revision.
@@ -33,16 +30,11 @@ class Revision
     /**
      * Opcodes to get to the previous revision.
      *
+     * @Column(type="text")
+     *
      * @var string|null
      */
     protected $opcodes;
-
-    /**
-     * Optional comment for this revision.
-     *
-     * @var string
-     */
-    protected $comment;
 
     /**
      * The date and time the revision was created.
